@@ -1,0 +1,170 @@
+---
+description: "How to interpret, prioritize, and apply all rules in this project."
+alwaysApply: true
+---
+
+# Meta Rules
+
+E2E UI automation for **ThriveSparrow** using Playwright + JavaScript ES modules, Page Object Model via POManager.
+
+## Rule Inventory
+
+This project distributes rules into the folders they govern. Understand their scope before generating code:
+
+| Rule File | Type | Scope |
+|---|---|---|
+| `.cursor/rules/meta.mdc` | Always | Rule interpretation, precedence, coding standards (this file) |
+| `.cursor/rules/project-context.mdc` | Always | Product domain, application modules, framework architecture, commands |
+| `TSAP/Pages/README.md` | Folder-local | POM pattern, POManager, page object template, method patterns |
+| `TSAP/Pages/locator-rules.md` | Folder-local | Locator priority P1–P6.1, naming prefixes, XPath, anti-patterns |
+| `TSAP/Pages/function-rules.md` | Folder-local | Function naming, options objects, JSDoc, anti-patterns |
+| `TSAP/Pages/pwactions-reference.md` | Folder-local | PwActions API reference — click, input, wait, query, navigation methods |
+| `TSAP/Tests/README.md` | Folder-local | Test folder overview, test generation workflow (Phases 0–5), Jira/Figma integration |
+| `TSAP/Tests/test-rules.md` | Folder-local | thrivePage fixture, test structure, assertions, Allure, test data isolation |
+| `TSAP/Tests/WebApp_Testing/{Module}_Test_Cases/README.md` | Module-local | Product context, page objects, common patterns per module |
+| `TSAP/Data/README.md` | Folder-local | Environment config, constants, EntityIds, YAML data |
+| `TSAP/Fixtures/README.md` | Folder-local | thrivePage fixture internals, network monitoring, failure artifacts |
+| `TSAP/Shared_Functions/README.md` | Folder-local | Cross-page utilities, when to add shared vs page-specific |
+
+## Rule Precedence
+
+When rules overlap or conflict, apply this order (highest priority first):
+
+1. **Module documentation** (`{Module}_Test_Cases/README.md`) — module-specific patterns always override generic rules.
+2. **Domain-specific rules** (`locator-rules.md`, `function-rules.md`, `test-rules.md`) — the authority for their domain.
+3. **Folder README** (`Pages/README.md`, `Tests/README.md`, etc.) — structural context and conventions.
+4. **This meta rule** — universal coding standards and routing; lowest specificity.
+
+## How to Read Documentation
+
+Before generating or modifying code, always check for docs in this order:
+
+| Working on… | Read FIRST (in order) |
+|---|---|
+| `TSAP/Pages/**/*.js` | `Pages/README.md` → `Pages/locator-rules.md` → `Pages/function-rules.md` → `Pages/pwactions-reference.md` |
+| `TSAP/Shared_Functions/**/*.js` | `Shared_Functions/README.md` → `Pages/function-rules.md` |
+| `TSAP/Tests/**/*.spec.js` | `Tests/test-rules.md` → `Tests/WebApp_Testing/{Module}_Test_Cases/README.md` |
+| `TSAP/Data/**/*.js` | `Data/README.md` |
+| `TSAP/Fixtures/**/*.js` | `Fixtures/README.md` |
+
+### By Intent
+
+| User Says | Read In Order |
+|---|---|
+| "Write test for…" | `Tests/test-rules.md` → module `README.md` → `Pages/README.md` |
+| "Automate PROJ-123" | Fetch Jira → read PRD/Figma if linked → `Tests/test-rules.md` |
+| "Create page object" | `Pages/README.md` → `locator-rules.md` → `function-rules.md` |
+| "Add locator for…" | `Pages/locator-rules.md` → `Pages/README.md` |
+| "Debug this test" | Use `user-playwright-browser_*` MCP → `Pages/locator-rules.md` |
+| Figma URL present | Fetch Figma screenshot/JSON → `Pages/locator-rules.md` |
+
+### Test Clubbing Rule
+
+**Does Step 2 need Step 1 state? → YES = CLUB**  
+**Does Test 2 repeat Test 1 setup? → YES = CLUB (extend Test 1)**
+
+Sequential steps → ONE test | Independent scenarios → SEPARATE tests
+
+## When No Rule Matches
+
+If you are working on code that no rule specifically addresses:
+- Follow the patterns of existing sibling files in the same directory.
+- Check the nearest `README.md` for local conventions.
+- Fall back to the **Coding Standards** section below as the baseline.
+
+## Documentation Maintenance (STRICT)
+
+When making changes to a folder's structure, adding/removing files, or modifying conventions:
+- Always update the folder's `README.md` to reflect the changes.
+- If the change affects page objects, update `Pages/README.md`. If it affects test patterns, update the module's `README.md`.
+- If a module folder has no `README.md` yet, create one following the pattern of existing module READMEs.
+- Keep documentation accurate — stale docs are worse than no docs.
+
+---
+
+## Coding Standards
+
+These are universal. Domain-specific rules in folder-local files override when more specific.
+
+- **ES Modules only** — `import`/`export`, never `require()`
+- **Always use PwActions** — never raw `page.click()` / `page.fill()`
+- **Always use POManager** — never `new PageClass(page)` directly
+- **File naming** — Pages: `kebab-case.js` | Tests: `test-cases-<feature>.spec.js`
+- **No inline locators** in spec files — locators live in page object constructors
+- **Unique test data** — always `Date.now()` or faker, never hardcoded entity names
+- **Allure steps** — wrap every logical action group in `allure.step()`
+- **Assertions** — every `expect()` must have a descriptive failure message
+- **JSDoc** — every function must have description, `@param`, `@returns`, `@example`
+
+## Anti-Duplication Checklist
+
+Before creating anything new:
+1. **Page Object** → Check `POManager.js` — exists? Read it. Reuse or extend.
+2. **Method** → Search current file → same feature folder → `common-functions.js`. 80%+ overlap → add optional param instead.
+3. **Test** → Search `Tests/WebApp_Testing/{Module}_Test_Cases/` — add to existing file if one covers the feature.
+4. **Locator** → Check page object constructor → `CommonPageFunctions`. Reuse if found.
+
+---
+
+## Decision Trees
+
+### Where to Add Code
+
+```
+├─ Locator     → TSAP/Pages/{Module}/{feature}-page.js constructor
+├─ Page method → TSAP/Pages/{Module}/{feature}-page.js
+├─ Shared util → TSAP/Shared_Functions/common-functions.js
+├─ Test spec   → TSAP/Tests/WebApp_Testing/{Module}_Test_Cases/
+├─ Test data   → TSAP/Data/Resources/constants.js
+└─ API helper  → Use APIActions from framework
+```
+
+### Which Wait
+
+(See `TSAP/Pages/function-rules.md` for API reference)
+
+```
+├─ Page navigation → PwActions.waitForNetworkIdle(page)
+├─ DOM ready       → PwActions.waitForDOMContentLoaded(page)
+├─ Element visible → PwActions.waitTillVisible(page, locator)
+├─ Element gone    → PwActions.waitTillElementDisappear(page, locator)
+└─ Known animation → CommonUtils.sleep(seconds) — document reason
+```
+
+---
+
+## MCP Tool Routing
+
+| Trigger | MCP Server | Primary Tools |
+|---|---|---|
+| Jira ticket ID mentioned | `user-mcp-atlassian` | `jira_get_issue`, `confluence_get_page` — fetch ticket + PRD + Figma link |
+| Figma URL present | `user-twigs-ai-mcp` | `get_figma_screenshot`, `get_figma_json` — extract UI structure for locators |
+| Debugging / exploring app | `user-playwright-browser` | `browser_navigate`, `browser_snapshot`, `browser_click` — always snapshot first |
+
+**Jira:** Always fetch PRD (Confluence) and Figma if linked in ticket — Jira alone is never enough.
+**Figma:** Start with screenshot, fall back to JSON. If 404 (expired token), proceed without it.
+**Browser:** Always `browser_snapshot()` before any interaction. Never copy raw `[ref=…]` into page objects.
+
+### Browser Environment: Always Use S2
+
+Always navigate to `https://test-automation-2.s2.engagesparrow.com/login` (admin: `thrive.automation+10@surveysparrowqa.com` / `Test@1234`) for locator discovery. Never use any other environment.
+
+### Hard Gate: Browser Verification for New Locators
+
+**NEVER write new locators without first navigating to the live app and running `browser_snapshot()`.** This applies to ALL new page objects and ALL new locators added to existing page objects.
+
+- If writing a new page object → navigate to the feature URL, snapshot every screen in the flow, extract locators from the real DOM.
+- If the app is unreachable (no credentials, environment down) → STOP and ask the user. Do NOT invent placeholder locators.
+- Pipe-separated fallback locators (`locator1 | locator2`) are a rule violation — they indicate the locator was guessed, not verified.
+- This rule has **no exceptions**. Skipping browser verification is as serious as using raw `page.click()` instead of `PwActions`.
+
+---
+
+## Rule Quality Guidelines
+
+When creating or updating rules or READMEs in this project:
+- Keep every file under 200 lines. Split large rules into separate files.
+- One domain per file. Never mix locator rules with test structure rules.
+- Be assertive. Use "Always", "Must", "Never" — not "Consider" or "Try to".
+- Include concrete examples — at least one good and one bad per rule.
+- Rules live in the folder they govern. Only project-wide rules (`meta.mdc`, `project-context.mdc`) live in `.cursor/rules/`.

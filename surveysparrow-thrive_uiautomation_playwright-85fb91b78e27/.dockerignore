@@ -1,0 +1,17 @@
+node_modules
+test-results
+playwright-report
+my-allure-results
+allure-report
+**/test-results
+.git
+.github
+.vscode
+.env
+.env.*
+*.log
+npm-debug.log*
+coverage
+.DS_Store
+*.md
+docs/

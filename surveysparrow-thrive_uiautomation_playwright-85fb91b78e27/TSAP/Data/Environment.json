@@ -1,0 +1,25 @@
+{
+	"S2": {
+		"url": "",
+		"signupUrl": "",
+		"uri": "",
+		"adminEmail": "",
+		"adminName": "",
+		"password": "Test@1234",
+		"approverEmail": "",
+		"approverPassword": "",
+		"senderEmail": "test-automation-2@mailer.noforms.io",
+		"emailDomain": "mailer.noforms.io",
+		"urlTrial": "https://trail-automation.s2.engagesparrow.com/login",
+		"uriTrial": "https://trail-automation.s2.engagesparrow.com/login",
+		"usernameTrial": "",
+		"passwordTrial": "",
+		"sampleUserMail": "thrive.automation+18364@surveysparrowqa.com",
+		"sampleUserName": "thrive automation18364",
+		"goalCycle": "Y 2025",
+		"goalsUserEmail": "thrive.automation+goals@surveysparrowqa.com",
+		"goalsPassword": "",
+		"goalsUserName": "Goals Employee",
+		"goalSnapshotSecret": ""
+	}
+}

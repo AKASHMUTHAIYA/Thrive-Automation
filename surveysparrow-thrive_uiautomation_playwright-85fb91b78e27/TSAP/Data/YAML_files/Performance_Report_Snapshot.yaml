@@ -1,0 +1,4338 @@
+# Combined report snapshots for 360 survey tests
+# Contains: peer_disabled, custom_disabled, label_change, default_clubbed_with_default scenarios, default_clubbed_with_custom, custom_and_default_excluded, for_roles_excluded_and_combined, goal_based_report, exclude_self_evaluation_from_average_calculation
+# MCQ Scenarios (3 variations per report type - works for both anonymous and non-anonymous):
+#   Subject Reports: mcq_show_roles_subject, mcq_hide_roles_subject, mcq_show_name_subject
+#   Manager Reports: mcq_show_roles_manager, mcq_hide_roles_manager, mcq_show_name_manager
+#   Approver Reports: mcq_show_roles_approver, mcq_hide_roles_approver, mcq_show_name_approver
+#   Department Reports: mcq_show_roles_department, mcq_hide_roles_department, mcq_show_name_department
+#   Organization Reports: mcq_show_roles_organization, mcq_hide_roles_organization, mcq_show_name_organization
+#   Group Reports: mcq_show_roles_group, mcq_hide_roles_group, mcq_show_name_group
+
+# ============================================================
+# PEER ROLE DISABLED - only Self 1, Reportee 1, Manager 1, Custom 1
+# ============================================================
+peer_disabled:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 1 100%":
+          - cell "Self 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 1 1 1 100%":
+          - cell "Reportee 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 1 100%":
+          - cell "Manager 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "3.79/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "3.75"
+    - paragraph: Communication Skills
+    - paragraph: "4.48"
+    - paragraph: Team Skills
+    - paragraph: "3.81"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "3.75/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "4.48/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4.86"
+    - paragraph: Reportee 1
+    - paragraph: "4.86"
+    - paragraph: Manager 1
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "3.81/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: Leadership Skills
+    - paragraph: "3.75/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 4 4 1"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 5 5 2"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 3 3 2"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - paragraph: Communication Skills
+    - paragraph: "4.48/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 4 4 N/A"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 5 5 0"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 3 3 1"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - paragraph: Team Skills
+    - paragraph: "3.81/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 5 5 2"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 4 4 2"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 3 3 0"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+
+# ============================================================
+# CUSTOM ROLE DISABLED - only Self 1, Peer 1, Reportee 1, Manager 1
+# ============================================================
+custom_disabled:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 1 100%":
+          - cell "Self 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Peer 1 1 1 100%":
+          - cell "Peer 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 1 1 1 100%":
+          - cell "Reportee 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 1 100%":
+          - cell "Manager 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.45/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.45"
+    - paragraph: Communication Skills
+    - paragraph: "2.41"
+    - paragraph: Team Skills
+    - paragraph: "2.81"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.45/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Peer 1
+    - paragraph: "1.04"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.41/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4.86"
+    - paragraph: Peer 1
+    - paragraph: "0.05"
+    - paragraph: Reportee 1
+    - paragraph: "4.86"
+    - paragraph: Manager 1
+    - paragraph: "4.86"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.81/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Peer 1
+    - paragraph: "1.71"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: Leadership Skills
+    - paragraph: "2.45/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 1 4 4"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 2 5 5"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 2 3 3"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - paragraph: Communication Skills
+    - paragraph: "2.41/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 N/A 4 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 0 5 5"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 1 3 3"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - paragraph: Team Skills
+    - paragraph: "2.81/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 2 5 5"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 2 4 4"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 0 3 3"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+
+# ============================================================
+# LABEL NAME CHANGE - All roles with modified labels
+# ============================================================
+label_change:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 1 100%":
+          - cell "Self 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Peer 1 1 1 100%":
+          - cell "Peer 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 1 1 1 100%":
+          - cell "Reportee 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 1 100%":
+          - cell "Manager 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.39/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.40"
+    - paragraph: Communication Skills
+    - paragraph: "2.31"
+    - paragraph: Team Skills
+    - paragraph: "2.76"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.40/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Peer 1
+    - paragraph: "1.04"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.31/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4.86"
+    - paragraph: Peer 1
+    - paragraph: "0.05"
+    - paragraph: Reportee 1
+    - paragraph: "4.86"
+    - paragraph: Manager 1
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.76/5" [level=1]
+    - paragraph: Self 1
+    - paragraph: "4"
+    - paragraph: Peer 1
+    - paragraph: "1.71"
+    - paragraph: Reportee 1
+    - paragraph: "4"
+    - paragraph: Manager 1
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: Leadership Skills
+    - paragraph: "2.40/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 1 4 4 1"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 2 5 5 2"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 2 3 3 2"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - paragraph: Communication Skills
+    - paragraph: "2.31/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 N/A 4 4 N/A"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 0 5 5 0"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 1 3 3 1"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - paragraph: Team Skills
+    - paragraph: "2.76/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self 1 Peer 1 Reportee 1 Manager 1 Custom 1":
+          - columnheader "QUESTIONS"
+          - columnheader "Self 1"
+          - columnheader "Peer 1"
+          - columnheader "Reportee 1"
+          - columnheader "Manager 1"
+          - columnheader "Custom 1"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 2 5 5 2"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 2 4 4 2"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 0 3 3 0"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+
+# ============================================================
+# GOAL-BASED REPORT - Performance report with goal-based questions
+# ============================================================
+goal_based_report:
+  section_participants:
+    - paragraph: Introduction
+    - paragraph: Purpose
+    - list:
+      - listitem: Enable transparent communication with staff, peers, managers, etc.
+      - listitem: Identify one’s strengths and weaknesses and plan on using them effectively.
+      - listitem: Improve one's overall performance.
+      - listitem: Obtain a holistic overview of one’s behavior by incorporating the opinions and perspectives of others
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Peer 1 1 100%":
+          - cell "Peer"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_goal_summary:
+    - paragraph: Goal Summary
+    - paragraph: This section captures your active goals during the assessment period, with peer feedback included where available.
+    - paragraph: Goal Cycles
+    - paragraph: "{{GOAL_CYCLE}}"
+    - paragraph: .
+    - paragraph: As measured on
+    - paragraph: "/.*/"
+    - paragraph: Goal Progress
+    - heading "0.0%" [level=1]
+    - paragraph: Goal Count
+    - heading "3" [level=1]
+    - paragraph: "On Track:"
+    - paragraph: "0"
+    - paragraph: "Completed:"
+    - paragraph: "0"
+    - paragraph: "Not Started:"
+    - paragraph: "3"
+    - paragraph: "Delayed:"
+    - paragraph: "0"
+    - paragraph: "At Risk:"
+    - paragraph: "0"
+    - paragraph: Goal Cycles
+    - paragraph: "{{GOAL_CYCLE}}"
+    - paragraph: .
+    - paragraph: As measured on
+    - paragraph: "/.*/"
+    - paragraph: Goal
+    - paragraph: Progress
+    - paragraph: Score
+    - paragraph: Not Started
+    - img
+    - paragraph: "{{GOAL_NAME_1}}"
+    - paragraph: "Org: Test Automation"
+    - paragraph: 0%
+    - paragraph: "1.0"
+    - img
+    - paragraph: "{{GOAL_NAME_2}}"
+    - paragraph: "Org: Test Automation"
+    - paragraph: 0%
+    - paragraph: "--"
+    - img
+    - paragraph: "{{GOAL_NAME_3}}"
+    - paragraph: "Org: Test Automation"
+    - paragraph: 0%
+    - paragraph: "--"
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "1.3/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "1.3"
+    - paragraph: Communication Skills
+    - paragraph: "1.3"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "1.3/5" [level=1]
+    - paragraph: Self
+    - paragraph: "1.3"
+    - paragraph: Peer
+    - paragraph: "1.3"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "1.3/5" [level=1]
+    - paragraph: Self
+    - paragraph: "1.3"
+    - paragraph: Peer
+    - paragraph: "1.3"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: Leadership Skills
+    - paragraph: 1.3/5
+    - table:
+        - rowgroup:
+            - row "QUESTIONS Self Peer":
+                - columnheader "QUESTIONS"
+                - columnheader "Self"
+                - columnheader "Peer"
+        - rowgroup:
+            - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 2 2"':
+                - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Exhibits leadership qualities in their current role at the organization.
+                - cell "2":
+                    - img
+                    - paragraph: "2"
+                - cell "2":
+                    - img
+                    - paragraph: "2"
+            - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 1 1"':
+                - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Encourages teamwork and collaboration across various teams.
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+            - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 1 1"':
+                - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Helps their team members solve work-related issues.
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+            - 'row "Scale Used: 5 Point Goal 1"':
+                - 'cell "Scale Used: 5 Point Goal 1"':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Goal 1
+            - 'row "Goal: {{GOAL_NAME_1}} 1 1"':
+                - 'cell "Goal: {{GOAL_NAME_1}}"'
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+            - row "Above feedback was noted at 0% goal progress":
+                - cell "Above feedback was noted at 0% goal progress":
+                    - paragraph: Above feedback was noted at 0% goal progress
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+        - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+        - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - row "Goal 2":
+        - cell "Goal 2":
+            - paragraph: Goal 2
+    - 'row "Goal: {{GOAL_NAME_2}}"':
+        - 'cell "Goal: {{GOAL_NAME_2}}"'
+    - row "Self Goal Testing 2":
+        - cell "Self Goal Testing 2":
+            - img
+            - paragraph: Self
+            - paragraph: Goal Testing 2
+    - row "Above feedback was noted at 0% goal progress":
+        - cell "Above feedback was noted at 0% goal progress":
+            - paragraph: Above feedback was noted at 0% goal progress
+    - 'row "Goal: {{GOAL_NAME_3}}"':
+        - 'cell "Goal: {{GOAL_NAME_3}}"'
+    - row "Self Goal Testing 2 Peer Goal Testing 2":
+        - cell "Self Goal Testing 2 Peer Goal Testing 2":
+            - img
+            - paragraph: Self
+            - paragraph: Goal Testing 2
+            - img
+            - paragraph: Peer
+            - paragraph: Goal Testing 2
+    - row "Above feedback was noted at 0% goal progress":
+        - cell "Above feedback was noted at 0% goal progress":
+            - paragraph: Above feedback was noted at 0% goal progress
+    - paragraph: Communication Skills
+    - paragraph: 1.3/5
+    - table:
+        - rowgroup:
+            - row "QUESTIONS Self Peer":
+                - columnheader "QUESTIONS"
+                - columnheader "Self"
+                - columnheader "Peer"
+        - rowgroup:
+            - 'row "Scale Used: 5 Point Communicates clearly and concisely. 1 1"':
+                - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Communicates clearly and concisely.
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+            - 'row "Scale Used: 5 Point Actively listens to others. 2 2"':
+                - 'cell "Scale Used: 5 Point Actively listens to others."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Actively listens to others.
+                - cell "2":
+                    - img
+                    - paragraph: "2"
+                - cell "2":
+                    - img
+                    - paragraph: "2"
+            - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 1 1"':
+                - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+                    - paragraph: "Scale Used: 5 Point"
+                    - paragraph: Provides candid feedback that facilitates improvement.
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+                - cell "1":
+                    - img
+                    - paragraph: "1"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+        - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+        - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+
+  section_areas_of_improvement:
+    - paragraph: Areas of Improvement
+    - paragraph: Below are the statements where you received the lowest ratings and are considered your areas of improvements.
+    - img
+    - paragraph: '1.3'
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - img
+    - paragraph: '1.3'
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+# ============================================================
+# DEFAULT CLUBBED WITH DEFAULT 
+# ============================================================
+default_clubbed_with_default:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 2 2 100%":
+          - cell "Reportee"
+          - cell "2"
+          - cell "2"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 100%":
+          - cell "Manager"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 2 1 1 100%":
+          - cell "Custom 2"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.41/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.41"
+    - paragraph: Communication Skills
+    - paragraph: "2.33"
+    - paragraph: Team Skills
+    - paragraph: "2.77"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.41/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Reportee
+    - paragraph: "1.78"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - paragraph: Custom 2
+    - paragraph: "4"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.33/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4.86"
+    - paragraph: Reportee
+    - paragraph: "1.29"
+    - paragraph: Manager
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - paragraph: Custom 2
+    - paragraph: "4.86"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.77/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Reportee
+    - paragraph: "2.29"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+    - paragraph: Custom 2
+    - paragraph: "4"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+
+    # Leadership Skills
+    - paragraph: Leadership Skills
+    - paragraph: "2.41/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 1.75 4 1 4"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1.75":
+            - img
+            - paragraph: "1.75"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 2.75 5 2 5"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2.75":
+            - img
+            - paragraph: "2.75"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 2.25 3 2 3"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2.25":
+            - img
+            - paragraph: "2.25"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Communication Skills
+    - paragraph: Communication Skills
+    - paragraph: "2.33/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 4 4 N/A 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 1.25 5 0 5"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "1.25":
+            - img
+            - paragraph: "1.25"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 1.50 3 1 3"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1.50":
+            - img
+            - paragraph: "1.50"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Team Skills
+    - paragraph: Team Skills
+    - paragraph: "2.77/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 2.75 5 2 5"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2.75":
+            - img
+            - paragraph: "2.75"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 2.50 4 2 4"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2.50":
+            - img
+            - paragraph: "2.50"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 0.75 3 0 3"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0.75":
+            - img
+            - paragraph: "0.75"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+# ============================================================
+# DEFAULT CLUBBED WITH CUSTOM 
+# ============================================================
+default_clubbed_with_custom:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 1 1 100%":
+          - cell "Reportee"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 100%":
+          - cell "Manager"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 2 2 2 100%":
+          - cell "Custom 2"
+          - cell "2"
+          - cell "2"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.41/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.41"
+    - paragraph: Communication Skills
+    - paragraph: "2.33"
+    - paragraph: Team Skills
+    - paragraph: "2.77"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.41/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Reportee
+    - paragraph: "4"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - paragraph: Custom 2
+    - paragraph: "1.09"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.33/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4.86"
+    - paragraph: Reportee
+    - paragraph: "4.86"
+    - paragraph: Manager
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - paragraph: Custom 2
+    - paragraph: "0.13"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.77/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Reportee
+    - paragraph: "4"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+    - paragraph: Custom 2
+    - paragraph: "1.75"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    # Leadership Skills
+    - paragraph: Leadership Skills
+    - paragraph: "2.41/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 4 4 1 1.05"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "1.05":
+            - img
+            - paragraph: "1.05"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 5 5 2 2.05"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "2.05":
+            - img
+            - paragraph: "2.05"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 3 3 2 2.02"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "2.02":
+            - img
+            - paragraph: "2.02"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+
+    # Communication Skills
+    - paragraph: Communication Skills
+    - paragraph: "2.33/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 4 4 N/A 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 5 5 0 0.08"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "0.08":
+            - img
+            - paragraph: "0.08"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 3 3 1 1.03"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "1.03":
+            - img
+            - paragraph: "1.03"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+
+    # Team Skills
+    - paragraph: Team Skills
+    - paragraph: "2.77/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 5 5 2 2.05"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "2.05":
+            - img
+            - paragraph: "2.05"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 4 4 2 2.03"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "2.03":
+            - img
+            - paragraph: "2.03"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 3 3 0 0.05"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "0.05":
+            - img
+            - paragraph: "0.05"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    - button:
+      - img
+    - paragraph: Testing
+
+# ============================================================
+# CUSTOM AND DEFAULT ROLE EXCLUDED
+# ============================================================
+custom_and_default_excluded:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Peer 1 1 100%":
+          - cell "Peer"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 100%":
+          - cell "Manager"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 2 1 1 100%":
+          - cell "Custom 2"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.41/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.41"
+    - paragraph: Communication Skills
+    - paragraph: "2.33"
+    - paragraph: Team Skills
+    - paragraph: "2.77"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.41/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Peer
+    - paragraph: "1.04"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 2
+    - paragraph: "4"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.33/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4.86"
+    - paragraph: Peer
+    - paragraph: "0.05"
+    - paragraph: Manager
+    - paragraph: "4.86"
+    - paragraph: Custom 2
+    - paragraph: "4.86"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.77/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Peer
+    - paragraph: "1.71"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 2
+    - paragraph: "4"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: Leadership Skills
+    - paragraph: "2.41/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Manager Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Manager"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 1 4 4"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 2 5 5"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 2 3 3"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    - paragraph: Communication Skills
+    - paragraph: "2.33/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Manager Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Manager"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 N/A 4 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 0 5 5"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 1 3 3"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    - paragraph: Team Skills
+    - paragraph: "2.77/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Manager Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Manager"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 2 5 5"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 2 4 4"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 0 3 3"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+# ============================================================
+# AND & OR CONDITIONS FOR ROLE EXCLUDED AND COMBINED
+# ============================================================
+for_roles_excluded_and_combined:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Others 1 1 100%":
+          - cell "Others"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 2 1 1 100%":
+          - cell "Custom 2"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.41/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.41"
+    - paragraph: Communication Skills
+    - paragraph: "2.33"
+    - paragraph: Team Skills
+    - paragraph: "2.77"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.41/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Others
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - paragraph: Custom 2
+    - paragraph: "4"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.33/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4.86"
+    - paragraph: Others
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - paragraph: Custom 2
+    - paragraph: "4.86"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.77/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Others
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+    - paragraph: Custom 2
+    - paragraph: "4"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+
+    # Leadership Skills
+    - paragraph: Leadership Skills
+    - paragraph: "2.41/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Others Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Others"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 4 4 1 4"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 5 5 2 5"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 3 3 2 3"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Others
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Communication Skills
+    - paragraph: Communication Skills
+    - paragraph: "2.33/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Others Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Others"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 4 4 N/A 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 5 5 0 5"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 3 3 1 3"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Others
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Team Skills
+    - paragraph: Team Skills
+    - paragraph: "2.77/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Reportee Others Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Reportee"
+          - columnheader "Others"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 5 5 2 5"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 4 4 2 4"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 3 3 0 3"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Others
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+    
+# ============================================================
+# EXCLUDE SELF EVALUATION FROM AVERAGE CALCULATION
+# ============================================================
+exclude_self_evaluation_from_average_calculation:
+  section_participants:
+    - paragraph: Participants
+    - paragraph: The following is a summary of the group of respondents who were invited to participate and provide feedback for you.
+    - table:
+      - rowgroup:
+        - row "RELATIONSHIP NOMINATED COMPLETED COMPLETION RATE":
+          - columnheader "RELATIONSHIP"
+          - columnheader "NOMINATED"
+          - columnheader "COMPLETED"
+          - columnheader "COMPLETION RATE"
+      - rowgroup:
+        - row "Self 1 1 100%":
+          - cell "Self"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Peer 1 1 100%":
+          - cell "Peer"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Reportee 1 1 100%":
+          - cell "Reportee"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Manager 1 1 100%":
+          - cell "Manager"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 1 1 1 100%":
+          - cell "Custom 1"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+        - row "Custom 2 1 1 100%":
+          - cell "Custom 2"
+          - cell "1"
+          - cell "1"
+          - cell "100%":
+            - paragraph: 100%
+
+  section_competency_summary:
+    - paragraph: Competency Summary
+    - button:
+      - img
+    - paragraph: Overall Summary
+    - paragraph: This section will give you an idea on overall score of an employee
+    - heading "2.26/5" [level=1]
+    - paragraph: Leadership Skills
+    - paragraph: "2.27"
+    - paragraph: Communication Skills
+    - paragraph: "2.10"
+    - paragraph: Team Skills
+    - paragraph: "2.66"
+    - button:
+      - img
+    - paragraph: Leadership Skills
+    - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+    - heading "2.27/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Peer
+    - paragraph: "1.04"
+    - paragraph: Reportee
+    - paragraph: "4"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.04"
+    - paragraph: Custom 2
+    - paragraph: "4"
+    - button:
+      - img
+    - paragraph: Communication Skills
+    - paragraph: This section will be used to rate the employee based on their Communication Skills
+    - heading "2.10/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4.86"
+    - paragraph: Peer
+    - paragraph: "0.05"
+    - paragraph: Reportee
+    - paragraph: "4.86"
+    - paragraph: Manager
+    - paragraph: "4.86"
+    - paragraph: Custom 1
+    - paragraph: "0.05"
+    - paragraph: Custom 2
+    - paragraph: "4.86"
+    - button:
+      - img
+    - paragraph: Team Skills
+    - paragraph: This section will be used to rate the employee based on their Team Skills
+    - heading "2.66/5" [level=1]
+    - paragraph: Self
+    - paragraph: "4"
+    - paragraph: Peer
+    - paragraph: "1.71"
+    - paragraph: Reportee
+    - paragraph: "4"
+    - paragraph: Manager
+    - paragraph: "4"
+    - paragraph: Custom 1
+    - paragraph: "1.71"
+    - paragraph: Custom 2
+    - paragraph: "4"
+
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+
+    # Leadership Skills
+    - paragraph: Leadership Skills
+    - paragraph: "2.27/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization. 4 1 4 4 1 4"':
+          - 'cell "Scale Used: 5 Point Exhibits leadership qualities in their current role at the organization."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Exhibits leadership qualities in their current role at the organization.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Encourages teamwork and collaboration across various teams. 5 2 5 5 2 5"':
+          - 'cell "Scale Used: 5 Point Encourages teamwork and collaboration across various teams."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Encourages teamwork and collaboration across various teams.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Helps their team members solve work-related issues. 3 2 3 3 2 3"':
+          - 'cell "Scale Used: 5 Point Helps their team members solve work-related issues."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Helps their team members solve work-related issues.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in leadership skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Communication Skills
+    - paragraph: Communication Skills
+    - paragraph: "2.10/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Communicates clearly and concisely. 4 N/A 4 4 N/A 4"':
+          - 'cell "Scale Used: 5 Point Communicates clearly and concisely."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Communicates clearly and concisely.
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "N/A":
+            - img
+            - paragraph: N/A
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Actively listens to others. 5 0 5 5 0 5"':
+          - 'cell "Scale Used: 5 Point Actively listens to others."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Actively listens to others.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Provides candid feedback that facilitates improvement. 3 1 3 3 1 3"':
+          - 'cell "Scale Used: 5 Point Provides candid feedback that facilitates improvement."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Provides candid feedback that facilitates improvement.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "1":
+            - img
+            - paragraph: "1"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in communication skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+    # Team Skills
+    - paragraph: Team Skills
+    - paragraph: "2.66/5"
+    - table:
+      - rowgroup:
+        - row "QUESTIONS Self Peer Reportee Manager Custom 1 Custom 2":
+          - columnheader "QUESTIONS"
+          - columnheader "Self"
+          - columnheader "Peer"
+          - columnheader "Reportee"
+          - columnheader "Manager"
+          - columnheader "Custom 1"
+          - columnheader "Custom 2"
+      - rowgroup:
+        - 'row "Scale Used: 5 Point Works effectively in a team. 5 2 5 5 2 5"':
+          - 'cell "Scale Used: 5 Point Works effectively in a team."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Works effectively in a team.
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "5":
+            - img
+            - paragraph: "5"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "5":
+            - img
+            - paragraph: "5"
+        - 'row "Scale Used: 5 Point Treats each and every team member with respect 4 2 4 4 2 4"':
+          - 'cell "Scale Used: 5 Point Treats each and every team member with respect"':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Treats each and every team member with respect
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "4":
+            - img
+            - paragraph: "4"
+          - cell "2":
+            - img
+            - paragraph: "2"
+          - cell "4":
+            - img
+            - paragraph: "4"
+        - 'row "Scale Used: 5 Point Respects and values differences among team members. 3 0 3 3 0 3"':
+          - 'cell "Scale Used: 5 Point Respects and values differences among team members."':
+            - paragraph: "Scale Used: 5 Point"
+            - paragraph: Respects and values differences among team members.
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "3":
+            - img
+            - paragraph: "3"
+          - cell "0":
+            - img
+            - paragraph: "0"
+          - cell "3":
+            - img
+            - paragraph: "3"
+    - paragraph: FEEDBACK
+    - paragraph: Please explain the reason for your scores in teamwork skills?
+    - button:
+      - img
+    - img
+    - paragraph: Self
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Peer
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Reportee
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Manager
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 1
+    - paragraph: Testing
+    - button:
+      - img
+    - img
+    - paragraph: Custom 2
+    - paragraph: Testing
+
+  section_blindspots:
+    - paragraph: Blind Spots
+    - paragraph: Blind Spots are statements where you rated yourself higher compared to the average rating of other respondents. These may be your potential areas of improvement.
+    - table:
+      - rowgroup:
+        - row "AREAS Self OTHERS":
+          - columnheader "AREAS"
+          - columnheader "Self"
+          - columnheader "OTHERS"
+      - rowgroup:
+        - row "Team Skills This section will be used to rate the employee based on their Team Skills 4 2.66":
+          - cell "Team Skills This section will be used to rate the employee based on their Team Skills":
+            - button:
+              - img
+            - paragraph: Team Skills
+            - paragraph: This section will be used to rate the employee based on their Team Skills
+          - cell "4":
+            - img
+            - paragraph: '4'
+          - cell "2.66":
+            - img
+            - paragraph: '2.66'
+        - row "Leadership Skills This section will be used to rate the employee based on their Leadership Skills. 4 2.27":
+          - cell "Leadership Skills This section will be used to rate the employee based on their Leadership Skills.":
+            - paragraph: Leadership Skills
+            - paragraph: This section will be used to rate the employee based on their Leadership Skills.
+          - cell "4":
+            - img
+            - paragraph: '4'
+          - cell "2.27":
+            - img
+            - paragraph: '2.27'
+        - row "Communication Skills This section will be used to rate the employee based on their Communication Skills 4.86 2.10":
+          - cell "Communication Skills This section will be used to rate the employee based on their Communication Skills":
+            - paragraph: Communication Skills
+            - paragraph: This section will be used to rate the employee based on their Communication Skills
+          - cell "4.86":
+            - img
+            - paragraph: '4.86'
+          - cell "2.10":
+            - img
+            - paragraph: '2.10'
+
+# ============================================================
+# MCQ SHOW ROLES - SUBJECT REPORT
+# (Works for both anonymous and non-anonymous - shows Self, Peer, Others)
+# ============================================================
+mcq_show_roles_subject:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 100%'
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+
+# ============================================================
+# MCQ SHOW NAME - SUBJECT REPORT
+# (Only available in non-anonymous - shows actual employee names)
+# ============================================================
+mcq_show_name_subject:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+
+# ============================================================
+# MCQ HIDE ROLES - SUBJECT REPORT
+# (Works for both anonymous and non-anonymous - shows only percentages)
+# ============================================================
+mcq_hide_roles_subject:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides your complete group-wise breakdown of your feedback on each statement.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 66.7%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 66.7%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 14.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 42.9%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 28.6%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 14.3%'
+    - paragraph: '"Custom text for multi select"'
+
+# ============================================================
+# MCQ SHOW ROLES - ORGANIZATION REPORT
+# (Works for both anonymous and non-anonymous - aggregated org-level data)
+# ============================================================
+mcq_show_roles_organization:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Org members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 100%'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for multi select"'
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+
+# ============================================================
+# MCQ SHOW NAME - ORGANIZATION REPORT
+# (Only available in non-anonymous - shows actual employee names with counts)
+# ============================================================
+mcq_show_name_organization:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Org members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: "/(Subject Automation 1|Approver Automation)/"
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (2)
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: "/(Evaluator Automation|Subject Automation 1)/"
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+
+# ============================================================
+# MCQ HIDE ROLES - ORGANIZATION REPORT
+# (Works for both anonymous and non-anonymous - shows only percentages, no names/roles)
+# ============================================================
+mcq_hide_roles_organization:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Org members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 40%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 60%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 60%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 40%'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 16.7%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 41.7%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 25%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 16.7%'
+    - paragraph: '"Custom text for multi select"'
+    - paragraph: '"Custom text for multi select"'
+
+# ============================================================
+# MCQ SHOW ROLES - DEPARTMENT REPORT
+# (Works for both anonymous and non-anonymous - shows Self, Peer, Others with department context)
+# ============================================================
+mcq_show_roles_department:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Sales department members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 100%'
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+
+# ============================================================
+# MCQ SHOW NAME - DEPARTMENT REPORT
+# (Only available in non-anonymous - shows actual employee names with counts for department)
+# ============================================================
+mcq_show_name_department:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Sales department members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+
+# ============================================================
+# MCQ HIDE ROLES - DEPARTMENT REPORT
+# (Works for both anonymous and non-anonymous - shows only aggregated percentages for department)
+# ============================================================
+mcq_hide_roles_department:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Sales department members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 66.7%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 66.7%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 14.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 42.9%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 28.6%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 14.3%'
+    - paragraph: '"Custom text for multi select"'
+
+# ============================================================
+# MCQ SHOW ROLES - MANAGER REPORT
+# (Works for both anonymous and non-anonymous - shows Self, Peer, Others for manager's view)
+# ============================================================
+mcq_show_roles_manager:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Subject's team members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 100%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 100%'
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 100%'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: Self
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: Peer
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+    - img
+    - paragraph: Others
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 50%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 50%'
+
+# ============================================================
+# MCQ SHOW NAME - MANAGER REPORT
+# (Only available in non-anonymous - shows actual employee names with counts for manager's view)
+# ============================================================
+mcq_show_name_manager:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Subject's team members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for single select"'
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: (1)
+    - img
+    - paragraph: Approver Automation
+    - paragraph: '"Custom text for multi select"'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Subject Automation 1
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: (1)
+    - img
+    - paragraph: Reportee Automation
+
+# ============================================================
+# MCQ HIDE ROLES - MANAGER REPORT
+# (Works for both anonymous and non-anonymous - shows only aggregated percentages for manager's view)
+# ============================================================
+mcq_hide_roles_manager:
+  section_detailed_feedback:
+    - paragraph: Detailed Feedback
+    - paragraph: The detailed statement-wise rating provides the complete breakdown of the Subject's team members.
+    - paragraph: MCQ Comprehensive Section
+    - paragraph: MCQ Single Select Predefined
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 33.3%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 66.7%'
+    - paragraph: MCQ Single Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 66.7%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 33.3%'
+    - paragraph: '"Custom text for single select"'
+    - paragraph: MCQ Multi Select with Others Predefined
+    - img
+    - paragraph: 'Option 1 :'
+    - paragraph: Option 1
+    - paragraph: '- 14.3%'
+    - img
+    - paragraph: 'Option 2 :'
+    - paragraph: Option 2
+    - paragraph: '- 42.9%'
+    - img
+    - paragraph: 'Option 3 :'
+    - paragraph: Option 3
+    - paragraph: '- 28.6%'
+    - img
+    - paragraph: 'Option 5 :'
+    - paragraph: Other
+    - paragraph: '- 14.3%'
+    - paragraph: '"Custom text for multi select"'
+

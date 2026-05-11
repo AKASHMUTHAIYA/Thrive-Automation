@@ -1,0 +1,135 @@
+---
+description: "ThriveSparrow product overview — what the platform does, application modules, test framework architecture, project structure, and common commands."
+alwaysApply: true
+---
+
+# Project Context
+
+## What is ThriveSparrow?
+
+ThriveSparrow is a **multi-tenant HR and employee engagement platform**. It covers employee engagement surveys (Pulse, eNPS, Exit), 360-degree performance feedback, OKRs/goals, employee recognition (Kudos/awards), 1:1 meetings, action plans, and an employee directory. It integrates with Slack, Teams, Google Workspace, and Outlook.
+
+This repo is the **E2E UI automation project** for ThriveSparrow, using Playwright + JavaScript ES modules with the Page Object Model pattern.
+
+## Application Modules Under Test
+
+| Module | Product Area | What It Does |
+|---|---|---|
+| **Engage** | Surveys | Pulse, eNPS, and Exit surveys — creation, builder, config, distribution, launch, attendance, reports (overview, heatmap, responses, conversations) |
+| **Performance/360** | Feedback | 360-degree feedback surveys — scales, roles, multi-level approval, CSV-link attendance, PDF reports, team analytics |
+| **Goals** | OKRs | Objectives and Key Results — goal cycles, company/team/individual goals, key result progress tracking |
+| **Kudos** | Recognition | Highfives, awards (fixed/variable points), multi-level approval workflows, leaderboard |
+| **People** | HR Directory | Employee CRUD, departments, job titles, smart lists, guests, CSV/HRIS import, custom properties, profiles |
+| **Core** | Platform | Account creation, signup verification, portal branding, billing |
+| **Action Plans** | Follow-up | Action plans generated from Engage and Performance report insights — assignees, due dates |
+| **Actionables** | Task Hub | Employee-facing pending tasks — surveys to attend, cutoff time enforcement |
+| **OneOnOne (1:1)** | Meetings | Manager-employee meetings — agenda, action items, notes, Google Calendar sync |
+| **Survey List** | Shared | Survey listing shared across Engage and Performance — search, filter, question banks |
+
+## Test Framework Tech Stack
+
+| Component | Technology |
+|---|---|
+| Test runner | Playwright Test |
+| Language | JavaScript (ES modules — `import`/`export`) |
+| Design pattern | Page Object Model via `POManager` |
+| UI actions | `PwActions` wrapper (never raw Playwright methods) |
+| Assertions | Playwright `expect` with mandatory failure messages |
+| Reporting | Allure |
+| Test data | `faker` + `Date.now()` for uniqueness |
+| Visual testing | `PwActions.visualTestComparison()` |
+| CI | Bitbucket Pipelines + Jenkins |
+
+## Framework Architecture
+
+```
+thrivePage (Playwright page + auto-login/logout fixture)
+    │
+    ├── POManager ─── getXxxPage() ─── Page Object (locators + methods)
+    │                                       │
+    │                                       └── PwActions (click, fill, wait, navigate)
+    │                                              │
+    │                                              └── Playwright API (browser automation)
+    │
+    ├── EntityIds ─── State sharing between test steps (surveyId, cookie, etc.)
+    │
+    ├── CommonPageFunctions ─── Cross-module utilities (navigation, search, downloads)
+    │
+    └── Allure ─── Step reporting, attachments, failure artifacts
+```
+
+- **`thrivePage`** — Playwright `page` with auto-login before each test, auto-logout after, network monitoring, and failure artifacts (screenshot, video, trace). Defined in `TSAP/Fixtures/application-setup.js`.
+- **`POManager`** — Single entry point for all page objects. Never instantiate page classes directly.
+- **`PwActions`** — Static wrapper over Playwright methods. All UI interactions must go through it.
+- **`EntityIds`** — Singleton for sharing state (IDs, URLs, cookies) between test steps within a test.
+
+## Project Structure
+
+```
+TSAP/
+├── Pages/              # Page objects organized by module (locators + interaction methods)
+│   └── POManager.js    # Central registry — always use this to get page objects
+├── Tests/
+│   ├── WebApp_Testing/ # E2E regression specs, one folder per module
+│   └── Visual_Testing/ # Visual regression specs
+├── Data/               # Environment config, constants, test files, YAML data
+├── Fixtures/           # thrivePage fixture (login/logout, network monitor, artifacts)
+├── Shared_Functions/   # Cross-page utilities, EntityIds, calculations
+└── Scripts/            # CI/CD scripts (reports, sharding, uploads)
+```
+
+## Common Commands
+
+```bash
+# Run all tests (QA environment)
+npm run test
+
+# Run specific test file
+npx cross-env ENV=qa npx playwright test path/to/test.spec.js
+
+# Run headed (visible browser)
+npx cross-env ENV=qa npx playwright test --headed path/to/test.spec.js
+
+# Run smoke tests
+npm run smoke
+
+# Run production sanity
+npm run productionSanity
+
+# Rerun last failed tests
+npm run rerun-last-failed-test
+
+# Playwright UI mode (interactive)
+npm run ui-mode
+
+# Generate Allure report
+npm run allure_report
+
+# View Allure report
+npm run serve_allure_report
+
+# View Playwright HTML report
+npm run report
+```
+
+## Environment Configuration
+
+Tests use `.env` to select the target environment. `Environment.json` holds per-environment config (URLs, credentials, feature flags). The `envDetails` object exports the active environment's config:
+
+```javascript
+import { envDetails } from "../../Data/test-data.js";
+const baseUrl = envDetails.url;
+const adminEmail = envDetails.adminEmail;
+```
+
+Key `.env` variables: `ENV` (environment name), `WORKERS` (parallel workers), `RETRIES` (retry count), `TOTAL_SHARDS` / `CURRENT_SHARD` (CI sharding).
+
+## Domain Knowledge for Test Generation
+
+- **Engage surveys** require a keyword in the name (`"pulse"`, `"engage"`, `"exit"`) for `createNewSurvey()` to select the correct type.
+- **360 surveys** use CSV-link attendance and have an approver workflow before subjects see reports.
+- **Goals** are hierarchical (company > team > individual) and belong to goal cycles.
+- **Kudos awards** support multi-level approval and fixed/variable point values.
+- **People** data feeds all other modules — employees created here become survey participants, goal assignees, etc.
+- **Action Plans** require a full survey lifecycle (create, build, distribute, launch, attend) before they can be created from reports.
+- **Actionables** show pending surveys to employees — tests verify appearance and cutoff time enforcement.

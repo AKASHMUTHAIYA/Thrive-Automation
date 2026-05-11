@@ -1,0 +1,36 @@
+node_modules/
+/test-results/
+/playwright-report/
+/blob-report/
+/playwright/.cache/
+/my-allure-results
+/allure-report
+.DS_Store
+  .DS_Store
+*.DS_Store
+*attachment.txt
+*attachment.png
+*result.json
+*.png
+!TSAP/Data/Screenshots/
+!TSAP/Data/Screenshots/**/
+!TSAP/Data/Screenshots/**/*.png
+*attachment.attach
+*attachment.webm
+*attachment.zip
+*container.json
+*Survey Response.json
+playwright-actions.log
+.vscode
+failed_tests_list.json
+failed_tests.json
+downloads/
+slackAuth.json
+failed_tests.backup.json
+test-results/
+node_modules/
+.env
+allure-results/
+allure-report/
+playwright-report/
+test-results/

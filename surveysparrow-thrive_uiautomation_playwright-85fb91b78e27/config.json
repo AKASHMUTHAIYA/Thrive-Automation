@@ -1,0 +1,5 @@
+{
+	"yamlDirectory": "TSAP/Data/YAML_files",
+	"dataDirectory": "TSAP/Data/Files",
+	"resourcesDirectory": "TSAP/Data/Resources"
+}
