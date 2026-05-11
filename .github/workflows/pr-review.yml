@@ -60,12 +60,12 @@ jobs:
           PR_NUMBER: ${{ github.event.pull_request.number }}
         run: |
           echo "Running PR review automation for PR #${PR_NUMBER} in ${GITHUB_REPOSITORY}"
-          node ./test-runner.js --repository $GITHUB_REPOSITORY --prNumber $PR_NUMBER
+          node ./test-runner.js --repository $GITHUB_REPOSITORY --prNumber $PR_NUMBER --report-only
 
       # Generate Allure HTML report from test results
       - name: Generate Allure report
         if: ${{ always() }}  # Run even if tests fail
-        run: npx allure-commandline generate ./allure-results --clean -o ./allure-report
+        run: npx allure generate ./allure-results --clean -o ./allure-report
 
       # Upload Allure report as workflow artifact
       - name: Upload Allure report artifact
