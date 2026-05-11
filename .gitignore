@@ -5,5 +5,10 @@ node_modules/
 /playwright-report/
 /blob-report/
 /playwright/.cache/
-rm -r __MACOSX
+__MACOSX/
+
+# Local secrets and reports
+.env
+allure-results/
+allure-report/
 
