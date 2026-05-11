@@ -33,21 +33,28 @@ async function getChangedFiles(prNumber, repository) {
   let page = 1;
 
   while (true) {
-    const response = await axios.get(
-      `${GITHUB_API_BASE}/repos/${owner}/${repo}/pulls/${prNumber}/files`,
-      {
-        headers: getAuthHeaders(),
-        params: { per_page: 100, page },
-      },
-    );
+    try {
+      const response = await axios.get(
+        `${GITHUB_API_BASE}/repos/${owner}/${repo}/pulls/${prNumber}/files`,
+        {
+          headers: getAuthHeaders(),
+          params: { per_page: 100, page },
+        },
+      );
 
-    const files = response.data.map((item) => item.filename.replace(/\\/g, '/'));
-    changedFiles.push(...files);
+      const files = response.data.map((item) => item.filename.replace(/\\/g, '/'));
+      changedFiles.push(...files);
 
-    if (files.length < 100) {
-      break;
+      if (files.length < 100) {
+        break;
+      }
+      page += 1;
+    } catch (error) {
+      const message = error.response
+        ? `GitHub API failed (${error.response.status}): ${JSON.stringify(error.response.data)}`
+        : error.message;
+      throw new Error(`Failed to fetch PR changed files: ${message}`);
     }
-    page += 1;
   }
 
   return Array.from(new Set(changedFiles));
@@ -56,13 +63,20 @@ async function getChangedFiles(prNumber, repository) {
 async function createPRComment(prNumber, message, repository) {
   const { owner, repo } = parseRepository(repository);
 
-  const response = await axios.post(
-    `${GITHUB_API_BASE}/repos/${owner}/${repo}/issues/${prNumber}/comments`,
-    { body: message },
-    { headers: getAuthHeaders() },
-  );
+  try {
+    const response = await axios.post(
+      `${GITHUB_API_BASE}/repos/${owner}/${repo}/issues/${prNumber}/comments`,
+      { body: message },
+      { headers: getAuthHeaders() },
+    );
 
-  return response.data;
+    return response.data;
+  } catch (error) {
+    const message = error.response
+      ? `GitHub comment API failed (${error.response.status}): ${JSON.stringify(error.response.data)}`
+      : error.message;
+    throw new Error(`Failed to post PR comment: ${message}`);
+  }
 }
 
 module.exports = {

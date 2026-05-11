@@ -9,6 +9,7 @@ jobs:
     runs-on: ubuntu-latest
     permissions:
       contents: read
+      issues: write
       pull-requests: write
       checks: write
 
@@ -35,7 +36,7 @@ jobs:
 
       - name: Generate Allure report
         if: ${{ always() }}
-        run: npx allure generate allure-results -o allure-report --clean
+        run: npx allure-commandline generate allure-results -o allure-report --clean
 
       - name: Upload Allure report artifact
         if: ${{ always() }}

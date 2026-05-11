@@ -6,15 +6,21 @@
     "mcp:server": "node ./server.js",
     "pr:review": "node ./test-runner.js",
     "test:smoke": "npx playwright test --grep @smoke",
-    "allure:generate": "npx allure generate allure-results -o allure-report --clean"
+    "allure:generate": "npx allure-commandline generate allure-results -o allure-report --clean"
   },
-  "keywords": ["playwright","mcp","allure","pr-review"],
+  "keywords": [
+    "playwright",
+    "mcp",
+    "allure",
+    "pr-review"
+  ],
   "author": "",
   "license": "ISC",
   "devDependencies": {
     "@playwright/test": "^1.59.1",
     "@types/node": "^25.6.0",
     "allure": "^3.8.0",
+    "allure-commandline": "^2.40.0",
     "allure-playwright": "^3.7.2"
   },
   "directories": {

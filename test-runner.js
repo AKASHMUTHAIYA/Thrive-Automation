@@ -21,7 +21,7 @@ function getRepositoryFromEnv() {
 
 function generateAllureReport() {
   console.log('Generating Allure report...');
-  const allureProcess = spawnSync('npx', ['allure', 'generate', 'allure-results', '-o', 'allure-report', '--clean'], {
+  const allureProcess = spawnSync('npx', ['allure-commandline', 'generate', 'allure-results', '-o', 'allure-report', '--clean'], {
     stdio: 'inherit',
     shell: true,
     env: process.env,
@@ -66,6 +66,17 @@ async function runImpactedTests({ prNumber, repository, commitSha, reportOnly = 
   if (impactedTests.length === 0) {
     const summary = 'No impacted smoke tests could be mapped from changed files. This avoids running the full suite.';
     console.log(summary);
+
+    if (!reportOnly) {
+      try {
+        const comment = buildPrComment(changedFiles, impactedTests, 0, summary);
+        await createPRComment(prNumber, comment, repository);
+        console.log('PR comment posted successfully for no impacted tests.');
+      } catch (error) {
+        console.warn('Could not post PR comment for no impacted tests:', error.message);
+      }
+    }
+
     return {
       changedFiles,
       selectedTests: [],
