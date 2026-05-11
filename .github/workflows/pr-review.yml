@@ -1,0 +1,79 @@
+name: PR Review Automation with Playwright Smoke Tests
+
+# Trigger on pull request events for main/master branches
+on:
+  pull_request:
+    branches: [ main, master ]
+    types: [opened, synchronize, reopened]
+
+# Set environment variable to force GitHub Actions to use Node.js 24
+env:
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
+jobs:
+  pr-review:
+    # Job name for PR review automation
+    name: Run Selective Smoke Tests & Generate Reports
+
+    # Timeout to prevent hanging jobs
+    timeout-minutes: 60
+
+    # Use latest Ubuntu runner
+    runs-on: ubuntu-latest
+
+    # Required permissions for GitHub API access and PR commenting
+    permissions:
+      contents: read          # Read repository contents
+      issues: write           # Write comments on issues/PRs
+      pull-requests: write    # Write comments and status checks on PRs
+      checks: write           # Write status checks
+
+    steps:
+      # Checkout repository code
+      - name: Checkout repository
+        uses: actions/checkout@v4
+        with:
+          # Fetch full history for better diff analysis
+          fetch-depth: 0
+
+      # Setup Node.js 24 environment
+      - name: Setup Node.js 24
+        uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          # Cache npm dependencies for faster builds
+          cache: 'npm'
+
+      # Install project dependencies
+      - name: Install dependencies
+        run: npm ci
+
+      # Install Playwright browsers and system dependencies
+      - name: Install Playwright browsers
+        run: npx playwright install --with-deps
+
+      # Run selective smoke tests based on changed files
+      - name: Run impacted smoke tests via PR review automation
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_REPOSITORY: ${{ github.repository }}
+          PR_NUMBER: ${{ github.event.pull_request.number }}
+        run: |
+          echo "Running PR review automation for PR #${PR_NUMBER} in ${GITHUB_REPOSITORY}"
+          node ./test-runner.js --repository $GITHUB_REPOSITORY --prNumber $PR_NUMBER
+
+      # Generate Allure HTML report from test results
+      - name: Generate Allure report
+        if: ${{ always() }}  # Run even if tests fail
+        run: npx allure-commandline generate ./allure-results --clean -o ./allure-report
+
+      # Upload Allure report as workflow artifact
+      - name: Upload Allure report artifact
+        if: ${{ always() }}  # Upload even if report generation fails
+        uses: actions/upload-artifact@v4
+        with:
+          name: allure-report-${{ github.event.pull_request.number }}
+          path: ./allure-report/
+          retention-days: 30
+          # Compress artifact for storage efficiency
+          compression-level: 6
