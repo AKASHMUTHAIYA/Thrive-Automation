@@ -1,0 +1,11 @@
+{
+  "pages/login-page.js": ["tests/login.smoke.spec.js"],
+  "pages/dashboard-page.js": ["tests/dashboard.smoke.spec.js"],
+  "utils/auth-utils.js": ["tests/login.smoke.spec.js"],
+  "tests/login.smoke.spec.js": ["tests/login.smoke.spec.js"],
+  "tests/dashboard.smoke.spec.js": ["tests/dashboard.smoke.spec.js"],
+  "__default__": [
+    "tests/login.smoke.spec.js",
+    "tests/dashboard.smoke.spec.js"
+  ]
+}
