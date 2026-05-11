@@ -60,6 +60,7 @@ function createReviewServer() {
       repository,
       commitSha,
       reportOnly: true,
+      skipAllure: true,
     });
 
     return {

@@ -46,7 +46,7 @@ function runPlaywrightTests(testFiles) {
   return result.status === 0 ? 0 : result.status || 1;
 }
 
-async function runImpactedTests({ prNumber, repository, commitSha, reportOnly = false, maxTests = 5 }) {
+async function runImpactedTests({ prNumber, repository, commitSha, reportOnly = false, skipAllure = false, maxTests = 5 }) {
   if (!prNumber) {
     prNumber = getPrNumberFromEnv();
   }
@@ -87,10 +87,12 @@ async function runImpactedTests({ prNumber, repository, commitSha, reportOnly = 
 
   const exitCode = runPlaywrightTests(impactedTests);
 
-  try {
-    generateAllureReport();
-  } catch (error) {
-    console.warn('Allure generation skipped because the command failed:', error.message);
+  if (!skipAllure) {
+    try {
+      generateAllureReport();
+    } catch (error) {
+      console.warn('Allure generation skipped because the command failed:', error.message);
+    }
   }
 
   const summary = `Completed ${impactedTests.length} smoke test(s) with status ${exitCode === 0 ? 'PASS' : 'FAIL'}.`;
