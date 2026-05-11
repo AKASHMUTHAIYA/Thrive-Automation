@@ -61,25 +61,3 @@ jobs:
         run: |
           echo "Running PR review automation for PR #${PR_NUMBER} in ${GITHUB_REPOSITORY}"
           node ./test-runner.js --repository $GITHUB_REPOSITORY --prNumber $PR_NUMBER --report-only
-
-      # Clean old Allure report directory if it exists
-      - name: Clean previous Allure report
-        if: ${{ always() }}  # Run even if tests fail
-        run: rm -rf ./allure-report || true
-      - name: Install Allure CLI
-        run: npm install -g allure-commandline
-      # Generate Allure HTML report from test results
-      - name: Generate Allure report
-        if: ${{ always() }}  # Run even if tests fail
-        run: npx allure generate -o ./allure-report ./allure-results
-
-      # Upload Allure report as workflow artifact
-      - name: Upload Allure report artifact
-        if: ${{ always() }}  # Upload even if report generation fails
-        uses: actions/upload-artifact@v4
-        with:
-          name: allure-report-${{ github.event.pull_request.number }}
-          path: ./allure-report/
-          retention-days: 30
-          # Compress artifact for storage efficiency
-          compression-level: 6
