@@ -21,7 +21,7 @@ function getRepositoryFromEnv() {
 
 function generateAllureReport() {
   console.log('Generating Allure report...');
-  const allureProcess = spawnSync('npx', ['allure-commandline', 'generate', 'allure-results', '-o', 'allure-report', '--clean'], {
+  const allureProcess = spawnSync('npx', ['allure', 'generate', 'allure-results', '-o', 'allure-report', '--clean'], {
     stdio: 'inherit',
     shell: true,
     env: process.env,

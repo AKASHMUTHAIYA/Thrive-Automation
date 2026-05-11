@@ -6,7 +6,7 @@
     "mcp:server": "node ./server.js",
     "pr:review": "node ./test-runner.js",
     "test:smoke": "npx playwright test --grep @smoke",
-    "allure:generate": "npx allure-commandline generate allure-results -o allure-report --clean"
+    "allure:generate": "npx allure generate allure-results -o allure-report --clean"
   },
   "keywords": [
     "playwright",

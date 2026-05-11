@@ -1,4 +1,4 @@
-const minimatch = require('minimatch');
+const { minimatch } = require('minimatch');
 const path = require('path');
 
 function normalizeGitPath(filePath) {
